@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qujiali.springboot.mapper.SysUserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.qujiali.springboot.entity.SysUser">
+        <id column="id_" property="id" />
+        <result column="user_name" property="userName" />
+        <result column="user_password" property="userPassword" />
+        <result column="enable_" property="enable" />
+        <result column="remark" property="remark" />
+        <result column="user_avator" property="userAvator" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+    
+    <select id="UserEnter" parameterType="java.lang.String" resultType="String">
+        SELECT
+        user_name AS username
+        FROM
+        sys_user
+        where
+        user_name= #{uname}
+        AND
+        user_password=#{upassword}
+    </select>
+</mapper>
