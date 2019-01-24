@@ -50,6 +50,7 @@ public class TGoodsServiceImpl extends ServiceImpl<TGoodsMapper, TGoods> impleme
         Page<TGoods> page = new Page<>(pageNumber,10,"id_");
         Page<TGoods> pageInfo = tGoodsService.selectPage(page,
                 new EntityWrapper<TGoods>()
+                        .eq("enable_",1)
                 .orderBy("create_time",false)
         );
         for(TGoods tGoods : pageInfo.getRecords()){
