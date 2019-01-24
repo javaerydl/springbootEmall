@@ -1,18 +1,17 @@
 server:
-    port: 8099
+  port: 8099
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
-    url: xxx
-    username: xxx
-    password: xxx
+    url: jdbc:mysql://192.168.1.142:3306/qjlemall?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=PRC&useSSL=false
+    username: root
+    password: Qujiali@888888
     driver-class-name: com.mysql.jdbc.Driver
 mybatis-plus:
-    mapper-locations:
-      - classpath:**/mapper/xml/*.xml
-    type-aliases-package: com.qujiali.springboot.entity
-    global-config:
-        logic-delete-value: 0
-        logic-not-delete-value: 1
-        sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
-
+  mapper-locations:
+    - classpath:**/mapper/xml/*.xml
+  type-aliases-package: com.qujiali.springboot.entity
+  global-config:
+    logic-delete-value: 0
+    logic-not-delete-value: 1
+    sql-injector: com.baomidou.mybatisplus.mapper.LogicSqlInjector
