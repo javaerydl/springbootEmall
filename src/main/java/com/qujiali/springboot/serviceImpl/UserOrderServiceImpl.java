@@ -97,6 +97,8 @@ public class UserOrderServiceImpl extends ServiceImpl<UserOrderMapper, UserOrder
                                 .eq("good_id", x.getGoodsId())
                                 .eq("good_standard", x.getGoodStandard())
                                 .eq("good_count", x.getGoodCount())
+                                .eq("enable_",0)
+
                 );
             });
         }catch (Exception E){
